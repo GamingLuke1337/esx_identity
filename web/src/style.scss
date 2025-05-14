@@ -16,6 +16,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 h1,
@@ -277,13 +278,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         margin-top: calc(0.092592592vh * 10);
         padding: 0 calc(0.092592592vh * 100);
+        gap: calc(0.092592592vh * 100);
         box-sizing: border-box;
 
         &-left {
-            height: calc(0.092592592vh * 600);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -321,7 +322,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             }
 
             &-card {
-                width: 100%;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -331,6 +331,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
                 background-color: #0e0e10;
                 filter: drop-shadow(0 0 calc(0.092592592vh * 10) rgba(255, 255, 255, 0.1));
                 padding: calc(0.092592592vh * 35) calc(0.092592592vh * 25);
+                box-sizing: border-box;
+                gap: calc(0.092592592vh * 20);
 
                 &-photo {
                     width: calc(0.092592592vh * 120);
@@ -363,6 +365,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
+                        width: calc(0.092592592vh * 90);
 
                         &.first {
                             width: calc(0.092592592vh * 150);
@@ -411,25 +414,109 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             bottom: 0;
         }
 
-        &-fake {
-            width: calc(0.092592592vh * 525);
-        }
-
         &-center {
-            width: calc(0.092592592vh * 500);
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             
             &-form {
-                background-color: #111113;
-                padding: calc(0.092592592vh * 30);
-                border-radius: calc(0.092592592vh * 5);
-                border: 1px solid rgba(255, 255, 255, 0.1);
                 display: flex;
                 flex-direction: column;
                 gap: calc(0.092592592vh * 20);
+
+                &-group {
+                    display: flex;
+                    flex-direction: row;
+                    gap: calc(0.092592592vh * 20);
+
+                    &-input {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: calc(0.092592592vh * 500);   
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                        border-radius: calc(0.092592592vh * 6);
+                        padding: calc(0.092592592vh * 12) calc(0.092592592vh * 10);
+                        padding-right: calc(0.092592592vh * 20);
+                        
+                        &-label {
+                            font-size: calc(0.092592592vh * 16);
+                            color: #878787;
+                            font-family: "SfProDisplayRegular";
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+                            gap: calc(0.092592592vh * 10);
+                            width: 100%;
+
+                            label {
+                                font-size: calc(0.092592592vh * 16);
+                                color: #878787;
+                                font-family: "SfProDisplayRegular";
+                            }
+
+                            input[type="text"], input[type="date"] {
+                                background-color: transparent;
+                                border: none;
+                                height: calc(0.092592592vh * 35);
+                                color: #fff;
+                                outline: none;
+                                width: 95%;
+                            }
+                        }
+
+                        i {
+                            font-size: calc(0.092592592vh * 30);
+                            color: var(--color);
+                        }
+                    }
+
+                    &-error {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: calc(0.092592592vh * 10);
+
+                        &-icon {
+                            background-color: var(--color);
+                            border-radius: calc(0.092592592vh * 3);
+                            width: calc(0.092592592vh * 15);
+                            height: calc(0.092592592vh * 15);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: calc(0.092592592vh * 10);
+
+                            i {
+                                font-size: calc(0.092592592vh * 22);
+                                color: rgba(0, 0, 0, 1);
+                            }
+                        }
+
+                        &-message {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+
+                            h1 {
+                                font-size: calc(0.092592592vh * 16);
+                                color: var(--color);
+                                font-family: "SfProDisplayRegular";
+                                text-transform: uppercase;
+                            }
+                            
+                            .error-message {
+                                font-size: calc(0.092592592vh * 15);
+                                color: #58585a;
+                                font-family: "SfProDisplayRegular";
+                            }
+                        }
+                    }
+                }
                 
                 .form-group {
                     display: flex;

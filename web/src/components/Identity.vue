@@ -61,6 +61,10 @@ const calculateAge = (dob) => {
     if (!dob) return "";
     return moment().diff(moment(dob), 'years');
 };
+
+const formatTextLong = (text) => {
+    return text.length > 9 ? text.substring(0, 9) + "..." : text;
+};
 </script>
 
 <template>
@@ -119,7 +123,7 @@ const calculateAge = (dob) => {
             </Form>
         </div>
     </div> -->
-    <div class="identity">
+    <div class="identity" style="--color: #FCAF4F;">
         <div class="identity__header">
             <h1>CHARACTER <span>IDENTITY</span></h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. typesetting industry. typesetting industry.typesetting industry.</p>
@@ -138,11 +142,11 @@ const calculateAge = (dob) => {
                         <div class="identity__body-left-card-info-row">
                             <div class="identity__body-left-card-info-column first">
                                 <span class="identity__body-left-card-info-label">PRÉNOM</span>
-                                <span class="identity__body-left-card-info-value">{{ firstname || "---" }}</span>
+                                <span class="identity__body-left-card-info-value">{{ formatTextLong(firstname) || "---" }}</span>
                             </div>
                             <div class="identity__body-left-card-info-column">
                                 <span class="identity__body-left-card-info-label">NOM</span>
-                                <span class="identity__body-left-card-info-value">{{ lastname || "---" }}</span>
+                                <span class="identity__body-left-card-info-value">{{ formatTextLong(lastname) || "---" }}</span>
                             </div>
                         </div>
                         <div class="identity__body-left-card-info-row">
@@ -174,19 +178,45 @@ const calculateAge = (dob) => {
 
             <div class="identity__body-center">
                 <Form @submit="onSubmit" :validation-schema="schema" id="register" action="#" novalidate class="identity__body-center-form">
-                    <div class="form-group">
-                        <label for="firstName">PRÉNOM</label>
-                        <Field id="firstname" type="text" name="firstname" placeholder="DIKKAT! Lütfen özel karakterler kullanmayıniz." validateOnInput v-model="firstname" />
-                        <ErrorMessage name="firstname" class="error-message" />
+                    <div class="identity__body-center-form-group">
+                        <div class="identity__body-center-form-group-input">
+                            <div class="identity__body-center-form-group-input-label">
+                                <label for="firstName">PRÉNOM</label>
+                                <Field id="firstname" type="text" name="firstname" placeholder="DIKKAT! Lütfen özel karakterler kullanmayıniz." validateOnInput v-model="firstname" />
+                            </div>
+                            <i class="fa-duotone fa-solid fa-address-card"></i>
+                        </div>
+                        <div class="identity__body-center-form-group-error">
+                            <div class="identity__body-center-form-group-error-icon">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                            <div class="identity__body-center-form-group-error-message">
+                                <h1>Error</h1>
+                                <ErrorMessage name="firstname" class="error-message" />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="lastName">NOM</label>
-                        <Field id="lastname" type="text" name="lastname" placeholder="Nom" validateOnInput v-model="lastname" />
-                        <ErrorMessage name="lastname" class="error-message" />
+                    <div class="identity__body-center-form-group">
+                        <div class="identity__body-center-form-group-input">
+                            <div class="identity__body-center-form-group-input-label">
+                                <label for="lastName">NOM</label>
+                                <Field id="lastname" type="text" name="lastname" placeholder="DIKKAT! Lütfen özel karakterler kullanmayıniz." validateOnInput v-model="lastname" />
+                            </div>
+                            <i class="fa-duotone fa-solid fa-address-card"></i>
+                        </div>
+                        <div class="identity__body-center-form-group-error">
+                            <div class="identity__body-center-form-group-error-icon">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                            <div class="identity__body-center-form-group-error-message">
+                                <h1>Error</h1>
+                                <ErrorMessage name="lastname" class="error-message" />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="birthdate">DATE DE NAISSANCE</label>
                         <Field id="dob" type="date" name="dob" placeholder="JJ/MM/AA" validateOnInput v-model="dob" />
                         <ErrorMessage name="dob" class="error-message" />
@@ -209,14 +239,13 @@ const calculateAge = (dob) => {
                             <label for="female">FEMME</label>
                         </div>
                         <ErrorMessage name="gender" class="error-message" />
-                    </div>
+                    </div> -->
 
                     <button type="submit" class="submit-button">CRÉER PERSONNAGE</button>
                 </Form>
             </div>
 
             <img src="https://fivem.lorisdev.fr/images/esx_identity/Raul_Bautista.webp" alt="Raul Bautista" class="identity__body-right-image">
-            <div class="identity__body-fake"></div>
         </div>
     </div>
 </template>
