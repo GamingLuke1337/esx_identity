@@ -31,16 +31,19 @@ RegisterNUICallback("ready", function(_, cb)
 end)
 
 function setGuiState(state)
-        SetNuiFocus(state, state)
-        guiEnabled = state
+    SetNuiFocus(state, state)
+    guiEnabled = state
 
-        if state then
-            SetTimecycleModifier(timecycleModifier)
-        else
-            ClearTimecycleModifier()
-        end
+    if state then
+        SetTimecycleModifier(timecycleModifier)
+    else
+        ClearTimecycleModifier()
+    end
 
-        SendNUIMessage({ type = "enableui", enable = state })
+    SendNUIMessage({ type = "enableui", enable = state })
+    SendNUIMessage({ type = "sendcolor", color = Config.Color })
+    SendNUIMessage({ type = "sendtranslations", translations = Locales[Config.Locale] })
+    SendNUIMessage({ type = "sendpolicelogo", logo = Config.PoliceLogo })
 end
 
 RegisterNetEvent("esx_identity:showRegisterIdentity", function()

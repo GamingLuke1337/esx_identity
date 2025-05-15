@@ -35,4 +35,47 @@ Locales["en"] = {
     ["invalid_dob_format"] = "Invalid Format (DOB): Please try again.",
     ["invalid_sex_format"] = "Invalid Format (Sex): Please try again.",
     ["invalid_height_format"] = "Invalid Format (Height): Please try again.",
+
+    -- General titles and texts
+    title = "CHARACTER",
+    subtitle = "CREATION",
+    description = "Create your character to begin your adventure in our city.",
+    error_title = "Error",
+    submit_button = "CREATE MY CHARACTER",
+
+    -- Field labels
+    firstname_label = "FIRST NAME",
+    lastname_label = "LAST NAME",
+    dob_label = "DATE OF BIRTH",
+    gender_label = "GENDER",
+    age_label = "AGE",
+    height_label = "HEIGHT",
+
+    -- Placeholders
+    firstname_placeholder = "John",
+    lastname_placeholder = "Doe",
+    dob_placeholder = "DD/MM/YYYY",
+
+    -- Gender
+    male = "Male",
+    female = "Female",
+
+    -- Police texts
+    police_title = "Police Department",
+    police_description = "Join law enforcement to ensure security",
+
+    -- Error messages
+    firstname_required = "First name is required",
+    firstname_min = "First name must have at least 3 characters",
+    lastname_required = "Last name is required",
+    lastname_min = "Last name must have at least 3 characters",
+    dob_required = "Date of birth is required",
+    dob_invalid = "Invalid date format",
+    dob_too_old = "You are too old for this adventure",
+    dob_too_young = "You must be at least 18 years old",
+    gender_required = "You must select a gender",
+    height_required = "Height is required",
+    height_min = "Minimum height is 120 cm",
+    height_max = "Maximum height is 220 cm",
+    height_invalid = "Height must be a number"
 }

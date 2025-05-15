@@ -35,4 +35,46 @@ Locales["fr"] = {
     ["invalid_dob_format"] = "Format invalide (Date de naissance) : Veuillez réessayer.",
     ["invalid_sex_format"] = "Format invalide (Genre) : Veuillez réessayer.",
     ["invalid_height_format"] = "Format invalide (Taille) : Veuillez réessayer.",
+
+    title = "CRÉATION DE",
+    subtitle = "PERSONNAGE",
+    description = "Créez votre personnage pour commencer votre aventure dans notre ville.",
+    error_title = "Erreur",
+    submit_button = "CRÉER MON PERSONNAGE",
+
+    -- Labels des champs
+    firstname_label = "PRÉNOM",
+    lastname_label = "NOM",
+    dob_label = "DATE DE NAISSANCE",
+    gender_label = "SEXE",
+    age_label = "ÂGE",
+    height_label = "TAILLE",
+
+    -- Placeholders
+    firstname_placeholder = "Jean",
+    lastname_placeholder = "Dupont",
+    dob_placeholder = "JJ/MM/AAAA",
+
+    -- Genre
+    male = "Homme",
+    female = "Femme",
+
+    -- Textes police
+    police_title = "Département de Police",
+    police_description = "Rejoignez les forces de l'ordre pour assurer la sécurité",
+
+    -- Messages d'erreur
+    firstname_required = "Le prénom est obligatoire",
+    firstname_min = "Le prénom doit avoir au moins 3 caractères",
+    lastname_required = "Le nom est obligatoire",
+    lastname_min = "Le nom doit avoir au moins 3 caractères",
+    dob_required = "La date de naissance est obligatoire",
+    dob_invalid = "Format de date invalide",
+    dob_too_old = "Vous êtes trop vieux pour cette aventure",
+    dob_too_young = "Vous devez avoir au moins 18 ans",
+    gender_required = "Vous devez sélectionner un genre",
+    height_required = "La taille est obligatoire",
+    height_min = "La taille minimum est de 120 cm",
+    height_max = "La taille maximum est de 220 cm",
+    height_invalid = "La taille doit être un nombre"
 }
