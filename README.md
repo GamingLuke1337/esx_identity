@@ -29,73 +29,73 @@ This program Is distributed In the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy Of the GNU General Public License along with this program. If Not, see <http://www.gnu.org/licenses/>.
 
-# ESX Identity avec système de traduction
+# ESX Identity with translation system
 
-Ce module permet de créer un personnage avec ses informations d'identité.
+This module allows you to create a character with identity information.
 
-## Exemple d'utilisation des traductions
+## Example of using translations
 
-### Dans le script côté serveur ou client
+### In the server or client script
 
 ```lua
--- Exemple d'envoi des traductions depuis le côté client ou serveur
--- Vous pouvez appeler ceci au chargement de la ressource ou lorsque l'interface est affichée
+-- Example of sending translations from client or server side
+-- You can call this when the resource loads or when the interface is displayed
 
 local translations = {
-    -- Titres et textes généraux
-    title = "CRÉATION DE",
-    subtitle = "PERSONNAGE",
-    description = "Créez votre personnage pour commencer votre aventure dans notre ville.",
-    error_title = "Erreur",
-    submit_button = "CRÉER MON PERSONNAGE",
+    -- General titles and texts
+    title = "CHARACTER",
+    subtitle = "CREATION",
+    description = "Create your character to start your adventure in our city.",
+    error_title = "Error",
+    submit_button = "CREATE MY CHARACTER",
     
-    -- Labels des champs
-    firstname_label = "PRÉNOM",
-    lastname_label = "NOM",
-    dob_label = "DATE DE NAISSANCE",
-    gender_label = "SEXE",
-    age_label = "ÂGE",
-    height_label = "TAILLE",
+    -- Field labels
+    firstname_label = "FIRST NAME",
+    lastname_label = "LAST NAME",
+    dob_label = "DATE OF BIRTH",
+    gender_label = "GENDER",
+    age_label = "AGE",
+    height_label = "HEIGHT",
     
     -- Placeholders
-    firstname_placeholder = "Jean",
-    lastname_placeholder = "Dupont",
-    dob_placeholder = "JJ/MM/AAAA",
+    firstname_placeholder = "John",
+    lastname_placeholder = "Doe",
+    dob_placeholder = "DD/MM/YYYY",
     
-    -- Genre
-    male = "Homme",
-    female = "Femme",
+    -- Gender
+    male = "Male",
+    female = "Female",
     
-    -- Textes police
-    police_title = "Département de Police",
-    police_description = "Rejoignez les forces de l'ordre pour assurer la sécurité",
+    -- Police texts
+    police_title = "Police Department",
+    police_description = "Join law enforcement to ensure safety",
     
-    -- Messages d'erreur
-    firstname_required = "Le prénom est obligatoire",
-    firstname_min = "Le prénom doit avoir au moins 3 caractères",
-    lastname_required = "Le nom est obligatoire",
-    lastname_min = "Le nom doit avoir au moins 3 caractères",
-    dob_required = "La date de naissance est obligatoire",
-    dob_invalid = "Format de date invalide",
-    dob_too_old = "Vous êtes trop vieux pour cette aventure",
-    dob_too_young = "Vous devez avoir au moins 18 ans",
-    gender_required = "Vous devez sélectionner un genre",
-    height_required = "La taille est obligatoire",
-    height_min = "La taille minimum est de 120 cm",
-    height_max = "La taille maximum est de 220 cm",
-    height_invalid = "La taille doit être un nombre"
+    -- Error messages
+    firstname_required = "First name is required",
+    firstname_min = "First name must have at least 3 characters",
+    lastname_required = "Last name is required",
+    lastname_min = "Last name must have at least 3 characters",
+    dob_required = "Date of birth is required",
+    dob_invalid = "Invalid date format",
+    dob_too_old = "You're too old for this adventure",
+    dob_too_young = "You must be at least 18 years old",
+    gender_required = "You must select a gender",
+    height_required = "Height is required",
+    height_min = "Minimum height is 120 cm",
+    height_max = "Maximum height is 220 cm",
+    height_invalid = "Height must be a number"
 }
 
--- Envoi des traductions à l'interface web
+-- Send translations to the web interface
 SendNUIMessage({
     type = "sendtranslations",
     translations = translations
 })
 ```
 
-## Comment ça fonctionne
+## How it works
 
-1. Le système utilise Vue.js pour créer l'interface utilisateur
-2. Les traductions sont injectées via l'event `sendtranslations`
-3. Chaque texte dans l'interface peut être personnalisé
-4. Si une traduction n'est pas fournie, une valeur par défaut en français est utilisée
+1. The system uses Vue.js to create the user interface
+2. Translations are injected via the `sendtranslations` event
+3. Each text in the interface can be customized
+4. If a translation is not provided, a default value in English is used
