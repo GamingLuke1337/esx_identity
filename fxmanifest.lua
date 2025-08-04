@@ -9,20 +9,16 @@ author 'loris29p'
 shared_scripts {
 	'@es_extended/imports.lua',
 	'@es_extended/locale.lua',
+	'locales/*.lua',
+	'config.lua'
 }
 
 server_scripts {
 	'@oxmysql/lib/MySQL.lua',
-	'locales/*.lua',
-	'config.lua',
 	'server/main.lua'
 }
 
-client_scripts {
-	'locales/*.lua',
-	'config.lua',
-	'client/main.lua'
-}
+client_script 'client/main.lua'
 
 files ({
 	'web/dist/assets/**',

@@ -36,13 +36,11 @@ function setGuiState(state)
 
     if state then
         SetTimecycleModifier(timecycleModifier)
-    else
-        ClearTimecycleModifier()
     end
 
     SendNUIMessage({ type = "enableui", enable = state })
     SendNUIMessage({ type = "sendcolor", color = Config.Color })
-    SendNUIMessage({ type = "sendtranslations", translations = Locales[Config.Locale] })
+    SendNUIMessage({ type = "sendtranslations", translations = Locales["de"] })
     SendNUIMessage({ type = "sendpolicelogo", logo = Config.PoliceLogo })
 end
 
